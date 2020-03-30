@@ -1,0 +1,15 @@
+.idea
+out
+*.class
+*.DS_Store
+/*.xml
+/*/*.xml
+/.idea/
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+*.ipr
+*.iws
+
