@@ -3,11 +3,11 @@ package class_03;
 abstract class Human {
     private int age;
 
-    void speak(){
+    protected void speak(){
         System.out.println("I'm a human, I can speak");
     }
 
-    void setAge(int age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

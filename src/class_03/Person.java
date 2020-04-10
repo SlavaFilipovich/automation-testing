@@ -1,6 +1,6 @@
 package class_03;
 
-abstract class Person extends Human{
+public abstract class Person extends Human{
     private String name;
     private String surName;
 
@@ -12,11 +12,11 @@ abstract class Person extends Human{
         return name;
     }
 
-    void setSurName(String surName) {
+    protected void setSurName(String surName) {
         this.surName = surName;
     }
 
-    void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 }
