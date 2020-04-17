@@ -1,6 +1,5 @@
 package class_03;
 
-import class_03.entity.Test;
 import class_03.worker.AutomationEngineer;
 import class_03.worker.TestEngineer;
 
@@ -19,7 +18,6 @@ public class Runner {
         automationEngineer.setAge(40);automationEngineer.setName("Bruce");automationEngineer.setSurName("Banner");
         System.out.println(automationEngineer.getAge());
         System.out.println(automationEngineer.getName()+" "+automationEngineer.getSurName());
-
 
     }
 }
