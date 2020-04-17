@@ -11,7 +11,7 @@ abstract class Human {
         this.age = age;
     }
 
-    int getAge() {
+    public int getAge() {
         return age;
     }
 
