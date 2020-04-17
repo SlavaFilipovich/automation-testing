@@ -6,8 +6,8 @@ import class_03.worker.Engineer;
 import class_03.worker.TestEngineer;
 
 public abstract class Test implements Function<Engineer, Result> {
-    protected int complexity;
-    protected int instability;
+    private int complexity;
+    private int instability;
 
     public Test(TestLevel testLevel, int instability) {
         this.complexity = testLevel.COMPLEXITY;
@@ -25,12 +25,22 @@ public abstract class Test implements Function<Engineer, Result> {
         if ((engineer instanceof AutomationEngineer && this instanceof ManualTest) ||
                 (engineer instanceof TestEngineer && this instanceof AutomatedTest)){
             anxiety = engineer.getAnxiety();
-        } else
-            anxiety = 1;
+        } else{
+        engineer.setAnxiety(1);
+        anxiety = engineer.getAnxiety();
+        }
         int result = anxiety * instability * complexity/engineer.getSkill();
         if (result > 30)
             return Result.FAILED;
         else
             return Result.PASSED;
+    }
+
+    public int getComplexity() {
+        return complexity;
+    }
+
+    public int getInstability() {
+        return instability;
     }
 }
