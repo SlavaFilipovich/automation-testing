@@ -1,7 +1,7 @@
-package class_03.worker;
+package worker;
 
-import class_03.entity.Result;
-import class_03.entity.ATest;
+import entity.ATest;
+import entity.Result;
 
 public class AutomationEngineer extends Engineer {
 

@@ -1,14 +1,14 @@
-package class_03.test;
-
-import class_03.entity.AutomatedATest;
-import class_03.entity.ManualATest;
-import class_03.entity.TestLevel;
-import class_03.worker.AutomationEngineer;
+package tests_engineers;
+import entity.AutomatedATest;
+import entity.ManualATest;
+import entity.TestLevel;
 import org.junit.Assert;
 import org.junit.Test;
+import worker.AutomationEngineer;
 
-import static class_03.entity.Result.FAILED;
-import static class_03.entity.Result.PASSED;
+import static entity.Result.PASSED;
+import static entity.Result.FAILED;
+
 
 /*
 We will do the different tests to cover all the possible situations.
