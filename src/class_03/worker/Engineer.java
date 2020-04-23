@@ -2,14 +2,14 @@ package class_03.worker;
 
 import class_03.Person;
 import class_03.entity.Result;
-import class_03.entity.Test;
+import class_03.entity.ATest;
 
 public abstract class Engineer extends Person {
     private int skill = (int) (Math.random() * 10) + 1;
     private int anxiety = 3;
 
-    public Result executeTest(Test test) {
-        return this.executeTest(test);
+    public Result executeTest(ATest ATest) {
+        return this.executeTest(ATest);
     }
 
     public int getAnxiety() {

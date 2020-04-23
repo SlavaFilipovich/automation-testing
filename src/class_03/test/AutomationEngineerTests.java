@@ -1,7 +1,7 @@
 package class_03.test;
 
-import class_03.entity.AutomatedTest;
-import class_03.entity.ManualTest;
+import class_03.entity.AutomatedATest;
+import class_03.entity.ManualATest;
 import class_03.entity.TestLevel;
 import class_03.worker.AutomationEngineer;
 import org.junit.Assert;
@@ -29,7 +29,7 @@ public class AutomationEngineerTests {
 
     @Test
     public void testEngineerAnxietyVer1(){
-        AutomatedTest testUnit = new AutomatedTest(TestLevel.UNIT,10);
+        AutomatedATest testUnit = new AutomatedATest(TestLevel.UNIT,10);
         testUnit.apply(engineer);
         Assert.assertEquals("Value of Anxiety is not correct: ",
                 1, engineer.getAnxiety());
@@ -37,7 +37,7 @@ public class AutomationEngineerTests {
 
     @Test
     public void testEngineerAnxietyVer2(){
-        ManualTest testUnit = new ManualTest(TestLevel.API,1);
+        ManualATest testUnit = new ManualATest(TestLevel.API,1);
         testUnit.apply(engineer);
         Assert.assertEquals("Value of Anxiety is not correct: ",
                 3, engineer.getAnxiety());
@@ -45,7 +45,7 @@ public class AutomationEngineerTests {
 
     @Test
     public void testEngineerComplexity(){
-        AutomatedTest testGui = new AutomatedTest(TestLevel.GUI,10);
+        AutomatedATest testGui = new AutomatedATest(TestLevel.GUI,10);
         Assert.assertEquals("Value of Complexity is not correct: ",
                 9, testGui.getComplexity());
     }
@@ -53,7 +53,7 @@ public class AutomationEngineerTests {
     //UNIT Version #1 Passed: automatedTest, UNIT(1), instability <= 10, anxiety 1, skill >= 1;
     @Test
     public void autoTestUnitVersion1(){
-        AutomatedTest test = new AutomatedTest(TestLevel.UNIT,10);
+        AutomatedATest test = new AutomatedATest(TestLevel.UNIT,10);
         engineer.setSkill(1);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), PASSED, engineer.executeTest(test));
@@ -62,7 +62,7 @@ public class AutomationEngineerTests {
     //API Version #1 Passed: automatedTest, API(3), instability <= 10, anxiety 1, skill >= 1;
     @Test
     public void autoTestApiVersion1(){
-        AutomatedTest test = new AutomatedTest(TestLevel.API,10);
+        AutomatedATest test = new AutomatedATest(TestLevel.API,10);
         engineer.setSkill(1);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), PASSED, engineer.executeTest(test));
@@ -71,7 +71,7 @@ public class AutomationEngineerTests {
     //GUI Version #1 Passed: automatedTest, GUI(9), instability <= 3, anxiety 1, skill >= 1;
     @Test
     public void autoTestGuiVersion1(){
-        AutomatedTest test = new AutomatedTest(TestLevel.GUI,3);
+        AutomatedATest test = new AutomatedATest(TestLevel.GUI,3);
         engineer.setSkill(1);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), PASSED, engineer.executeTest(test));
@@ -80,7 +80,7 @@ public class AutomationEngineerTests {
     //GUI Version #2 Failed: automatedTest, GUI(9), instability >= 7, anxiety 1, skill <= 2;
     @Test
     public void autoTestGuiVersion2(){
-        AutomatedTest test = new AutomatedTest(TestLevel.GUI,7);
+        AutomatedATest test = new AutomatedATest(TestLevel.GUI,7);
         engineer.setSkill(2);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), FAILED, engineer.executeTest(test));
@@ -89,7 +89,7 @@ public class AutomationEngineerTests {
     //GUI Version #3 Passed: automatedTest, GUI(9), instability <= 10, anxiety 1, skill >= 3;
     @Test
     public void autoTestGuiVersion3(){
-        AutomatedTest test = new AutomatedTest(TestLevel.GUI,10);
+        AutomatedATest test = new AutomatedATest(TestLevel.GUI,10);
         engineer.setSkill(3);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), PASSED, engineer.executeTest(test));
@@ -98,7 +98,7 @@ public class AutomationEngineerTests {
     //UNIT Version #1 Passed: manualTest, UNIT(1), instability <= 10, anxiety 3, skill >= 1;
     @Test
     public void manualTestUnitVersion1(){
-        ManualTest test = new ManualTest(TestLevel.UNIT,10);
+        ManualATest test = new ManualATest(TestLevel.UNIT,10);
         engineer.setSkill(1);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), PASSED, engineer.executeTest(test));
@@ -107,7 +107,7 @@ public class AutomationEngineerTests {
     //API Version #1 Passed: manualTest, API(3), instability <= 10, anxiety 3, skill >= 3;
     @Test
     public void manualTestApiVersion1(){
-        ManualTest test = new ManualTest(TestLevel.API,10);
+        ManualATest test = new ManualATest(TestLevel.API,10);
         engineer.setSkill(3);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), PASSED, engineer.executeTest(test));
@@ -116,7 +116,7 @@ public class AutomationEngineerTests {
     //API Version #2 Failed: manualTest, API(3), instability 10, anxiety 3, skill < 3;
     @Test
     public void manualTestApiVersion2(){
-        ManualTest test = new ManualTest(TestLevel.API,10);
+        ManualATest test = new ManualATest(TestLevel.API,10);
         engineer.setSkill(2);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), FAILED, engineer.executeTest(test));
@@ -125,7 +125,7 @@ public class AutomationEngineerTests {
     //GUI Version #1 Passed: manualTest, GUI(9), instability <= 10, anxiety 3, skill >= 9;
     @Test
     public void manualTestGuiVersion1(){
-        ManualTest test = new ManualTest(TestLevel.GUI,10);
+        ManualATest test = new ManualATest(TestLevel.GUI,10);
         engineer.setSkill(9);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), PASSED, engineer.executeTest(test));
@@ -134,7 +134,7 @@ public class AutomationEngineerTests {
     //GUI Version #2 Failed: manualTest, GUI(9), instability = 10, anxiety 3, skill <= 8;
     @Test
     public void manualTestGuiVersion2(){
-        ManualTest test = new ManualTest(TestLevel.GUI,10);
+        ManualATest test = new ManualATest(TestLevel.GUI,10);
         engineer.setSkill(8);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), FAILED, engineer.executeTest(test));
@@ -143,7 +143,7 @@ public class AutomationEngineerTests {
     //GUI Version #3 Passed: manualTest, GUI(9), instability <= 5, anxiety 3, skill >= 5;
     @Test
     public void manualTestGuiVersion3(){
-        ManualTest test = new ManualTest(TestLevel.GUI,5);
+        ManualATest test = new ManualATest(TestLevel.GUI,5);
         engineer.setSkill(5);
         Assert.assertEquals(String.format(MSG,test.getClass().getSimpleName(),test.getComplexity(),
                 test.getInstability(),engineer.getAnxiety(),engineer.getSkill()), PASSED, engineer.executeTest(test));
