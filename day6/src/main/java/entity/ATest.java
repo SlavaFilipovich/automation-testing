@@ -1,15 +1,15 @@
-package class_03.entity;
+package entity;
 
 import class_03.Function;
-import class_03.worker.AutomationEngineer;
-import class_03.worker.Engineer;
-import class_03.worker.TestEngineer;
+import worker.AutomationEngineer;
+import worker.Engineer;
+import worker.TestEngineer;
 
-public abstract class Test implements Function<Engineer, Result> {
+public abstract class ATest implements Function<Engineer, Result> {
     private int complexity;
     private int instability;
 
-    public Test(TestLevel testLevel, int instability) {
+    public ATest(TestLevel testLevel, int instability) {
         this.complexity = testLevel.COMPLEXITY;
         if(instability==0)
             this.instability = 1;
@@ -22,8 +22,8 @@ public abstract class Test implements Function<Engineer, Result> {
     @Override
     public Result apply(Engineer engineer) {
         int anxiety;
-        if ((engineer instanceof AutomationEngineer && this instanceof ManualTest) ||
-                (engineer instanceof TestEngineer && this instanceof AutomatedTest)){
+        if ((engineer instanceof AutomationEngineer && this instanceof ManualATest) ||
+                (engineer instanceof TestEngineer && this instanceof AutomatedATest)){
             anxiety = engineer.getAnxiety();
         } else{
         engineer.setAnxiety(1);

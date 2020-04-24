@@ -1,12 +1,6 @@
-package class_03.test;
+package tests_engineers;
 
 public class TestEngineerTests {
-
-
-
-
-
-
 
 }
 
