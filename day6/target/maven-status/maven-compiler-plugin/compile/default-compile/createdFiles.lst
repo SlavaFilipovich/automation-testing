@@ -1,0 +1,11 @@
+abstractPeople\Human.class
+entity\ManualATest.class
+entity\TestLevel.class
+worker\AutomationEngineer.class
+entity\ATest.class
+entity\Result.class
+entity\AutomatedATest.class
+abstractPeople\Person.class
+worker\Engineer.class
+worker\TestEngineer.class
+activity\Function.class
