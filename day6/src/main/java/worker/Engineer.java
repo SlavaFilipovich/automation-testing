@@ -1,8 +1,9 @@
 package worker;
 
-import class_03.Person;
+import abstractPeople.Person;
 import entity.ATest;
 import entity.Result;
+
 
 public abstract class Engineer extends Person {
     private int skill = (int) (Math.random() * 10) + 1;

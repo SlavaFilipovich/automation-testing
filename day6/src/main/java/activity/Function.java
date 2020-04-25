@@ -1,4 +1,4 @@
-package class_03;
+package activity;
 
 public interface Function<Engineer, Result> {
 

@@ -1,19 +1,18 @@
 package tests_engineers;
 
-import entity.ATest;
-import entity.ManualATest;
-import entity.Result;
-import entity.TestLevel;
+import entity.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import worker.AutomationEngineer;
 import worker.Engineer;
 import worker.TestEngineer;
 
 import java.util.Arrays;
 import java.util.Collection;
 
+import static entity.Result.FAILED;
 import static entity.Result.PASSED;
 
 @RunWith(Parameterized.class)
@@ -35,12 +34,23 @@ public class ExecuteTests {
     @Parameterized.Parameters
     public static Collection<Object[]> primeNumber() {
         return Arrays.asList(new Object[][]{
+                {new TestEngineer(), 1, new AutomatedATest(TestLevel.UNIT, 1), PASSED},
+                {new TestEngineer(), 10, new AutomatedATest(TestLevel.GUI, 10), PASSED},
                 {new TestEngineer(), 1, new ManualATest(TestLevel.UNIT, 10), PASSED},
-                {new TestEngineer(), 10, new ManualATest(TestLevel.UNIT, 5), PASSED},
-                {new TestEngineer(), 1, new ManualATest(TestLevel.API, 10), PASSED},
-                {new TestEngineer(), 10, new ManualATest(TestLevel.API, 9), PASSED},
-                {new TestEngineer(), 1, new ManualATest(TestLevel.GUI, 9), PASSED},
-                {new TestEngineer(), 10, new ManualATest(TestLevel.GUI, 9), PASSED},
+                {new TestEngineer(), 1, new AutomatedATest(TestLevel.API, 0), PASSED},
+                {new TestEngineer(), 10, new ManualATest(TestLevel.GUI, 0), PASSED},
+                {new TestEngineer(), 1, new AutomatedATest(TestLevel.API, 11), FAILED},
+                {new TestEngineer(), 1, new ManualATest(TestLevel.GUI, 1), PASSED},
+                {new TestEngineer(), 1, new ManualATest(TestLevel.API, 11), FAILED},
+
+                {new AutomationEngineer(), 10, new ManualATest(TestLevel.API, 1), PASSED},
+                {new AutomationEngineer(), 1, new ManualATest(TestLevel.GUI, 10), FAILED},
+                {new AutomationEngineer(), 10, new AutomatedATest(TestLevel.API, 10), PASSED},
+                {new AutomationEngineer(), 10, new ManualATest(TestLevel.UNIT, 11), PASSED},
+                {new AutomationEngineer(), 1, new AutomatedATest(TestLevel.GUI, 11), FAILED},
+                {new AutomationEngineer(), 1, new AutomatedATest(TestLevel.UNIT, 0), PASSED},
+                {new AutomationEngineer(), 1, new ManualATest(TestLevel.UNIT, 0), PASSED},
+                {new AutomationEngineer(), 10, new AutomatedATest(TestLevel.API, 1), PASSED},
         });
     }
 
