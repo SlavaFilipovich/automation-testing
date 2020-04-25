@@ -10,4 +10,8 @@ out
 *.log
 *.ipr
 *.iws
+**/db.properties
+target
+
+
 
