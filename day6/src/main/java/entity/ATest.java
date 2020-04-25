@@ -1,6 +1,6 @@
 package entity;
 
-import class_03.Function;
+import activity.Function;
 import worker.AutomationEngineer;
 import worker.Engineer;
 import worker.TestEngineer;

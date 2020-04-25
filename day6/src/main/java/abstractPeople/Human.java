@@ -1,4 +1,4 @@
-package class_03;
+package abstractPeople;
 
 abstract class Human {
     private int age;

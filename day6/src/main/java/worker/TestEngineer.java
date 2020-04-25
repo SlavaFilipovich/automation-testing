@@ -1,6 +1,5 @@
 package worker;
 
-
 import entity.ATest;
 import entity.Result;
 

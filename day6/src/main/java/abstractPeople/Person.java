@@ -1,4 +1,4 @@
-package class_03;
+package abstractPeople;
 
 public abstract class Person extends Human{
     private String name;
