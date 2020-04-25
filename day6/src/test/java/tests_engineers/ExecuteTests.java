@@ -41,7 +41,7 @@ public class ExecuteTests {
                 {new TestEngineer(), 10, new ManualATest(TestLevel.GUI, 0), PASSED},
                 {new TestEngineer(), 1, new AutomatedATest(TestLevel.API, 11), FAILED},
                 {new TestEngineer(), 1, new ManualATest(TestLevel.GUI, 1), PASSED},
-                {new TestEngineer(), 1, new ManualATest(TestLevel.API, 11), FAILED},
+                {new TestEngineer(), 1, new ManualATest(TestLevel.API, 11), PASSED},
 
                 {new AutomationEngineer(), 10, new ManualATest(TestLevel.API, 1), PASSED},
                 {new AutomationEngineer(), 1, new ManualATest(TestLevel.GUI, 10), FAILED},
