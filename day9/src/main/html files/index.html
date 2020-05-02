@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/images/favicon.jpg" rel="shortcut icon" type="image/x-icon">
+<title>Main page</title>
+<!--<link href="style.css" rel="stylesheet">-->
+<script>
+var tempValue;
+function hideValue(x) { 
+	tempValue=x.value;
+	x.setAttribute('value','');
+	}
+function setValue(x) {
+	x.setAttribute('value',tempValue);}
+</script>
+<style>
+*{
+	text-align: center;
+}
+p{
+	font-family: 'Comic Sans MS',sans-serif;
+	font-size:12pt;
+	color:grey;
+}
+h1{
+	font-family: 'Century Gothic',sans-serif;
+	font-size:500%;	
+}
+
+input{
+	background-position: center;
+	width:500px;
+	height:150px;
+	border:none;
+	border-radius:30px;
+	margin:10px;
+	font-size:200%;
+	font-weight: bold;
+	cursor: pointer;
+}
+input[id='about']{
+	background-image:url(images/pic11.png);	
+}
+input[id='regis']{
+	background-image:url(images/pic22.png);
+}
+input[id='media']{
+	background-image:url(images/pic33.png);
+}
+input:hover{
+	background-image:url(images/back.jpg);
+}
+</style>
+</head>
+<body>
+<h1 align="center">Welcome</h1>
+<p>
+	<form method="GET" action = "about.html">
+	<input id="about" type="submit" value="About us" 
+			onmouseover="hideValue(this)" onmouseout="setValue(this)">
+	</form><br>
+	<form method="GET" action = "app/index.php">
+	<input id="regis" type="submit" value="Check Registration"
+			onmouseover="hideValue(this)" onmouseout="setValue(this)">
+	</form><br>
+	<form method="GET" action = "media.html">
+	<input id="media" type = "submit" value = "Get Media" 
+			onmouseover = "hideValue(this)" onmouseout = "setValue(this)">
+	
+	</form><br>
+</p>
+<p><br/></br>This is just a dummy site (c)</p>
+</body>
+</html>
