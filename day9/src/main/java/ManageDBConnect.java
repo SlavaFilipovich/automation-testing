@@ -20,8 +20,11 @@ public class ManageDBConnect {
     private static void fillUsersList(){
         String initialQuery = "select * from users";
         String dropQuery = "drop table users";
-        String createQuery = "create table users";
-        String addToTableQuery = "insert into users (login) values (?, ?)";
+//        String createQuery = "CREATE TABLE users(" +
+//                "id int(11) primary key auto_increment," +
+//                "login varchar(255)," +
+//                "password char(40))";
+        String addToTableQuery = "insert into users (login, password) values (?, ?)";
         List<User> users = new ArrayList<>();
 
         try(Connection connection = getDataSource(prop).getConnection();
@@ -29,8 +32,11 @@ public class ManageDBConnect {
             ResultSet rs = statement.executeQuery(initialQuery)){
             if (rs.next()){
                 statement.executeUpdate(dropQuery);
+                //statement.executeUpdate(createQuery);
                 //users.add(new User(getId(), rs.getString(2),rs.getString(3)));
             }
+            //statement.executeUpdate(createQuery);
+            PreparedStatement prepState = connection.prepareStatement(addToTableQuery);
             for (int i = 1; i <= 10; i++) {
                 //users.add(new User(i, generateLogin );
             }
