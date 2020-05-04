@@ -1,10 +1,10 @@
 public class User {
-    int id;
-    String login;
-    String password;
+    private int id;
+    private String login;
+    private String password;
 
 
-    public User(int id, String login, String password) {
+    User(int id, String login, String password) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -12,11 +12,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return String.format("User with ID=%-2d [ login: %-10s, password: %-15s]",id,login,password);
     }
 
     public void setId(int id) {
