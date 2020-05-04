@@ -4,13 +4,12 @@ public class LogPassGenerate {
     private static final String UPPER_CASE="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String LOWER_CASE="abcdefghijklmnopqrstuvwxyz";
     private static final String DIGITS ="0123456789";
-    private static final String CHARACTERS_FULL="!@#$%^&*_=+-/.?<>()";
-    private static final String CHARACTERS_SHORT="!@#$";
+    private static final String CHARACTERS="!@#$%^&*_/?<>";
 
     static String generateLogin(){
-        String fullLine = UPPER_CASE+LOWER_CASE+DIGITS+CHARACTERS_SHORT;
+        String fullLine = UPPER_CASE+LOWER_CASE+DIGITS;
         StringBuilder login = new StringBuilder("");
-        int loginLength = 5+(int)(Math.random()*10+1);
+        int loginLength = 5+(int)(Math.random()*5+1);
         Random random = new Random();
         for (int i = 0; i < loginLength; i++) {
             char symbol = fullLine.charAt(random.nextInt(fullLine.length()));
@@ -20,9 +19,9 @@ public class LogPassGenerate {
     }
 
     static String generatePassword(){
-        String fullLine = UPPER_CASE+LOWER_CASE+DIGITS+CHARACTERS_FULL;
+        String fullLine = UPPER_CASE+LOWER_CASE+DIGITS+CHARACTERS;
         StringBuilder password = new StringBuilder("");
-        int passwordLength = 8+(int)(Math.random()*10+1);
+        int passwordLength = 8+(int)(Math.random()*7+1);
         Random random = new Random();
         for (int i = 0; i < passwordLength; i++) {
             char symbol = fullLine.charAt(random.nextInt(fullLine.length()));

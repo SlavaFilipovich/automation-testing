@@ -12,11 +12,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return String.format("User with ID=%-2d [ login: %-10s, password: %-15s]",id,login,password);
     }
 
     public void setId(int id) {
