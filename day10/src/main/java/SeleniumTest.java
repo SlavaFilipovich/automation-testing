@@ -3,14 +3,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.List;
-
 public class SeleniumTest {
-    static WebDriver driver = new ChromeDriver();
+    static WebDriver driver;
 
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.silentOutput", "true");
         System.setProperty("webdriver.chrome.driver", "C:\\Tools\\chromedriver.exe");
+        driver = new ChromeDriver();
 //        driver.get("https://google.com");
 //        System.out.println(driver.getTitle());
 //        System.out.println(driver.getCurrentUrl());
